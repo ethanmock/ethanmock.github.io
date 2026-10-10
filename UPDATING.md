@@ -82,9 +82,11 @@
 | `title` | 论文标题 |
 | `authors` | 作者串。`#` = 共同一作，`*` = 通讯作者（页面底部有图例） |
 | `venue` | 会议/期刊 + 年份，如 `AAAI 2025`、`IEEE TKDE 2025` |
-| `badges` | 徽章数组，如 `["CCF-A"]`、`["SCI Q1 · IF 8.1"]`；无则 `[]` |
+| `badges` | 徽章数组，先放等级/影响因子，再放本人作者身份，如 `["CCF-A", "# Co-first author", "* Corresponding author"]`；无则 `[]` |
 | `links` | 链接数组，每项 `{ "label": "paper", "url": "..." }`；`label` 常用 `paper` / `code`；无则 `[]` |
 | `topics` | 分类标签数组，决定"分类筛选"按钮里出现在哪一类（见下表） |
+
+作者身份徽章：`First author` = 第一作者，`# Co-first author` = 共同一作，`* Corresponding author` = 通讯作者，可同时标共一和通讯。本人排第一时显示 `First author`，作者串中原有的共一符号仍保留。身份须确认后填写，不能仅凭第二作者顺序推断共一。`demo.html` 中对应的研究亮点卡片也应同步更新。
 
 **`topics` 取值 ↔ 页面分类按钮**
 

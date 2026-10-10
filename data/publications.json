@@ -2,10 +2,11 @@
   {
     "year": 2026,
     "title": "VCoT-SQL: Enhancing Text-to-SQL Generation through Dual Chain-of-Thought Validation Training",
-    "authors": "Rui Zhang, Yujia Su, Ruixuan Li, Yuhua Li, Yixin Su",
+    "authors": "Rui Zhang, Yujia Su, Ruixuan Li, Yuhua Li, Yixin Su*",
     "venue": "EMNLP 2026",
     "badges": [
-      "CCF-B"
+      "CCF-B",
+      "* Corresponding author"
     ],
     "links": [
       {
@@ -37,7 +38,8 @@
     "authors": "Yunxiang Zhao#, Qian Li#, Mingyue Sun#, Yixin Su#, Xinxin Su#, Ling Jiang, Xinran Zhang, et al.",
     "venue": "Cell Reports 2025",
     "badges": [
-      "SCI Q1 · IF 8.1"
+      "SCI Q1 · IF 8.1",
+      "# Co-first author"
     ],
     "links": [
       {
@@ -55,7 +57,8 @@
     "authors": "Ziwen Zhao#, Yixin Su#, Yuhua Li*, Yixiong Zou, Ruixuan Li, Rui Zhang*",
     "venue": "IEEE TKDE 2025",
     "badges": [
-      "CCF-A"
+      "CCF-A",
+      "# Co-first author"
     ],
     "links": [
       {
@@ -74,7 +77,8 @@
     "authors": "Yixin Su#, Wei Jiang#, Fangquan Lin, Cheng Yang, Sarah Erfani, Junhao Gan, Yunxiang Zhao*, Ruixuan Li, Rui Zhang*",
     "venue": "ACM TOIS 2025",
     "badges": [
-      "CCF-A"
+      "CCF-A",
+      "First author"
     ],
     "links": [
       {
@@ -96,7 +100,8 @@
     "authors": "Yunxiang Zhao#, Jijun Yu#, Yixin Su#, You Shu#, Enhao Ma#, Jing Wang, Zhen Huang*, Gong Cheng*, Hongguang Ren*, Jiannan Feng*",
     "venue": "Nature Machine Intelligence 2025",
     "badges": [
-      "SCI Q1 · IF 26.4"
+      "SCI Q1 · IF 26.4",
+      "# Co-first author"
     ],
     "links": [
       {
@@ -132,7 +137,9 @@
     "authors": "Rui Zhang#, Yixin Su#*, Bayu Distiawan Trisedya, Xiaoyan Zhao, Min Yang, Hong Cheng, Jianzhong Qi",
     "venue": "IEEE TKDE 2024",
     "badges": [
-      "CCF-A"
+      "CCF-A",
+      "# Co-first author",
+      "* Corresponding author"
     ],
     "links": [
       {
@@ -189,7 +196,9 @@
     "title": "Dual Disentangled Attention for Multi-Information Utilization in Sequential Recommendation",
     "authors": "Ziqiang Cui#, Yixin Su#, Fangquan Lin, Cheng Yang, Hanwei Zhang, Jihai Zhang",
     "venue": "IJCNN 2022",
-    "badges": [],
+    "badges": [
+      "# Co-first author"
+    ],
     "links": [
       {
         "label": "paper",
@@ -206,7 +215,8 @@
     "authors": "Yixin Su, Yunxiang Zhao, Sarah Erfani*, Junhao Gan, Rui Zhang*",
     "venue": "SIGKDD 2022",
     "badges": [
-      "CCF-A"
+      "CCF-A",
+      "First author"
     ],
     "links": [
       {
@@ -229,7 +239,8 @@
     "authors": "Yixin Su, Rui Zhang, Sarah Erfani*, Zhenghua Xu*",
     "venue": "AAAI 2021",
     "badges": [
-      "CCF-A"
+      "CCF-A",
+      "First author"
     ],
     "links": [
       {
@@ -255,7 +266,8 @@
     "authors": "Yixin Su, Rui Zhang, Sarah Erfani, Junhao Gan",
     "venue": "SIGIR 2021",
     "badges": [
-      "CCF-A"
+      "CCF-A",
+      "First author"
     ],
     "links": [
       {
@@ -277,7 +289,9 @@
     "title": "MMF: Attribute Interpretable Collaborative Filtering",
     "authors": "Yixin Su, Sarah Erfani, Rui Zhang*",
     "venue": "IJCNN 2019",
-    "badges": [],
+    "badges": [
+      "First author"
+    ],
     "links": [
       {
         "label": "paper",
@@ -325,7 +339,9 @@
     "title": "Density and Distance Based KNN Approach to Classification",
     "authors": "Yixin Su, Sheng-Uei Guan",
     "venue": "IJAEC 2016",
-    "badges": [],
+    "badges": [
+      "First author"
+    ],
     "links": [
       {
         "label": "paper",
