@@ -48,6 +48,11 @@
   .meta{display:flex; align-items:center; gap:9px; flex-wrap:wrap}
   .badge{font-size:11px; font-weight:600; letter-spacing:.03em; color:var(--accent);
     background:#eef1f5; border:1px solid #dde4ec; border-radius:999px; padding:3px 10px}
+  .role{display:inline-flex;align-items:center;justify-content:center;width:27px;height:27px;border:1px solid;border-radius:9px;font-size:17px;font-weight:700;}
+  .role-first{color:#315cc4;background:#edf2ff;border-color:#cfdbff;}
+  .role-cofirst{color:#08776d;background:#e7f7f2;border-color:#b9e6d8;}
+  .badge{color:#6550a2;background:#f0ebfb;border-color:#dcd2f2;}
+  .card{border-color:#e8e5ed;box-shadow:0 6px 30px rgba(68,46,108,.07);}
   .topic{font-size:11px; color:var(--muted); letter-spacing:.05em}
   .idx{margin-left:auto; font-size:11.5px; color:#b7b3ab; font-variant-numeric:tabular-nums}
   .title{
@@ -99,7 +104,8 @@
           Leave "" to use the themed motif named by `art` (fi | rec | bio).      */
 const CARDS = [
   {
-    badge: "AAAI 2021 · CCF-A · First author",
+    badge: "AAAI 2021 · CCF-A",
+    role: "first",
     topic: { en: "Feature Interaction", zh: "特征交互" },
     title: "Detecting Beneficial Feature Interactions for Recommender Systems",
     authors: "Yixin Su, Rui Zhang, Sarah Erfani*, Zhenghua Xu*",
@@ -117,7 +123,8 @@ const CARDS = [
     ]
   },
   {
-    badge: "ACM TOIS 2025 · CCF-A · First author",
+    badge: "ACM TOIS 2025 · CCF-A",
+    role: "first",
     topic: { en: "Recommender Systems", zh: "推荐系统" },
     title: "IEDR: A Context-aware Intrinsic and Extrinsic Disentangled Recommender System",
     authors: "Yixin Su#, Wei Jiang#, Fangquan Lin, Cheng Yang, Sarah Erfani, Junhao Gan, Yunxiang Zhao*, Ruixuan Li, Rui Zhang*",
@@ -131,7 +138,8 @@ const CARDS = [
     links: [ { label: "paper", url: "https://arxiv.org/abs/2503.03524" } ]
   },
   {
-    badge: "Nature Machine Intelligence 2025 · IF 26.4 · # Co-first author",
+    badge: "Nature Machine Intelligence 2025 · IF 26.4",
+    role: "cofirst",
     topic: { en: "AI × Bio-Medicine", zh: "医工交叉" },
     title: "A Unified Deep Framework for Peptide–MHC–T Cell Receptor Binding Prediction",
     authors: "Yunxiang Zhao#, Jijun Yu#, Yixin Su#, You Shu#, Enhao Ma#, Jing Wang, Zhen Huang*, Gong Cheng*, Hongguang Ren*, Jiannan Feng*",
@@ -204,6 +212,7 @@ function render(n){
     <div class="content">
       <div class="meta">
         <span class="badge">${c.badge}</span>
+        <span class="role role-${c.role}" title="${c.role === 'first' ? (lang === 'zh' ? '第一作者' : 'First author') : (lang === 'zh' ? '共同一作' : 'Co-first author')}" aria-label="${c.role === 'first' ? (lang === 'zh' ? '第一作者' : 'First author') : (lang === 'zh' ? '共同一作' : 'Co-first author')}">${c.role === 'first' ? '①' : '#'}</span>
         <span class="topic">${c.topic[lang]}</span>
         <span class="idx">${String(n+1).padStart(2,"0")} / ${String(CARDS.length).padStart(2,"0")}</span>
       </div>

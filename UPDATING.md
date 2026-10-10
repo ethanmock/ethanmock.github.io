@@ -86,7 +86,7 @@
 | `links` | 链接数组，每项 `{ "label": "paper", "url": "..." }`；`label` 常用 `paper` / `code`；无则 `[]` |
 | `topics` | 分类标签数组，决定"分类筛选"按钮里出现在哪一类（见下表） |
 
-作者身份徽章：`First author` = 第一作者，`# Co-first author` = 共同一作，`* Corresponding author` = 通讯作者，可同时标共一和通讯。本人排第一时显示 `First author`，作者串中原有的共一符号仍保留。身份须确认后填写，不能仅凭第二作者顺序推断共一。`demo.html` 中对应的研究亮点卡片也应同步更新。
+作者身份徽章的数据仍使用 `First author`、`# Co-first author`、`* Corresponding author`，页面自动显示为蓝色 `①`（第一作者）、绿色 `#`（共同一作）、橙色 `*`（通讯作者），含双语图例和悬停提示，可同时标共一和通讯。本人排第一时显示 `First author`，作者串中原有的共一符号仍保留。身份须确认后填写，不能仅凭第二作者顺序推断共一。`demo.html` 中对应的研究亮点卡片也应同步更新（`role: "first"` 或 `role: "cofirst"`）。
 
 **`topics` 取值 ↔ 页面分类按钮**
 
