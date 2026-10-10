@@ -129,31 +129,21 @@
 
 主页 "Research" 区通过 `<iframe>` 嵌入 `data/config.json` 里 `demoUrl` 指向的页面：**`demoUrl` 非空就把它当作网页嵌进来**；为空则显示占位。
 
-### 5.1 当前内容：研究亮点卡片 `demo.html`
+### 5.1 当前内容：三项成果入口与独立介绍页
 
-现在 `demoUrl` 指向 `demo.html`——一个**可翻页的"研究亮点"卡片**（中英双语、左右翻页、每张一句话通俗解读 + 链接），目的是让访客 30 秒看懂代表工作。
+`demo.html` 展示三张可点击的研究入口，分别进入 `research/sign.html`、`research/iedr.html` 和 `research/unipmt.html`。主页语言切换会同步入口语言；介绍页也可独立切换中英文。
 
-**加/改/删亮点卡片** = 编辑 `demo.html` 顶部的 `CARDS` 数组，每张卡片：
-```js
-{
-  badge: "AAAI 2021 · CCF-A",              // 会场 · 徽章
-  topic: { en: "Feature Interaction", zh: "特征交互" },
-  title: "Detecting Beneficial Feature Interactions for Recommender Systems",
-  authors: "Yixin Su, Rui Zhang, Sarah Erfani*, Zhenghua Xu*",
-  summary: { en: "一句话英文解读", zh: "一句话中文解读" },
-  note: { en: "亮点/收录说明(可选)", zh: "..." },   // 无则写 null
-  image: "",                                // 配图：留空则用主题矢量图；填真实图见下
-  art: "fi",                                // 无配图时的主题图: fi(特征交互)/rec(推荐)/bio(医工)
-  links: [ { label: "paper", url: "https://..." } ]  // 无则写 []
-}
+- **改内容**：编辑 `data/highlights.json`，包含双语标题、问题、创新步骤、论文图说明、实验数字、作者身份、研究能力与资源链接。
+- **生成页面**：运行 `python3 scripts/build-highlights.py`，生成 `research/content.js` 和三个 HTML 入口。
+- **改风格与交互**：`research/style.css` 是介绍页样式，`research/page.js` 负责概念示意、语言切换与图片放大；`demo.html` 和 `research/gallery.js` 负责首页入口。
+- **原论文图**：放在 `assets/highlights/`；来源、提取方式及许可见该目录的 `SOURCES.md`。新增图时保留署名和来源，数字要与论文中的表/图核对。
+
+每页按“直观问题 → 核心想法 → 原论文图 → 实验证据 → 研究方向 → 资源”展开。交互为概念示意；不要将示意输出写成模型预测或实验结果。首页通过同源消息自动调整 iframe 高度，避免手机出现嵌套滚动。
+
+```bash
+python3 scripts/build-highlights.py
+python3 scripts/build.py --check
 ```
-
-**给某篇配真实论文图**：把图片（框架图/teaser）放到 `assets/highlights/`（如 `assets/highlights/sign.png`），再把该卡片的 `image` 设成 `"assets/highlights/sign.png"` 即可（会自动替换主题矢量图）。桌面端图在左、文字在右；手机端自动只显示文字。
-> **点卡片会跳到主页发表列表里对应的论文并高亮**——靠"卡片 `title` 与 `data/publications.json` 里该论文 `title` 完全一致"来定位。所以改卡片标题时，务必和发表列表里的标题保持一字不差（否则跳转会失效）。
->
-> `demo.html` 是独立文件，改完**无需**跑 `build.py`，直接 `git commit && git push` 即可（`build.py` 只负责把 `demoUrl` 这个地址写进主页，不碰 demo 内容）。改完想本地看：`python3 -m http.server 4599` 然后开 `http://localhost:4599/demo.html`。
-
-如果之后想改标题"Research Highlights / 研究亮点"这行小标题文案，它在 `index.html` 模板的 `research:` 文案块里（中英各一处）。
 
 ### 5.2 换成别的 demo（比如某篇论文的交互可视化）
 

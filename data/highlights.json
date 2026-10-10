@@ -1,0 +1,566 @@
+[
+  {
+    "id": "sign",
+    "name": "L₀-SIGN",
+    "color": "#6550b5",
+    "soft": "#f0ebff",
+    "number": "01",
+    "venue": "AAAI 2021 · CCF-A",
+    "role": "first",
+    "area": {
+      "en": "Feature interaction & graph learning",
+      "zh": "特征交互与图学习"
+    },
+    "headline": {
+      "en": "Find the connections\nthat actually matter.",
+      "zh": "找到真正有用的\n特征联系。"
+    },
+    "summary": {
+      "en": "A recommendation model should learn which features work together. L₀-SIGN turns this into a graph: learn useful connections, then predict with them.",
+      "zh": "推荐模型需要知道哪些特征组合真正有用。L₀-SIGN 将问题变成图学习：先学习有效连接，再用这些连接做预测。"
+    },
+    "question": {
+      "en": "Do more feature combinations always make better recommendations?",
+      "zh": "特征组合越多，推荐就越准吗？"
+    },
+    "answer": {
+      "en": "Some combinations add noise. A workday may help explain Gmail usage; a coincidental weather pattern can distract the model.",
+      "zh": "有些组合只会引入噪声。工作日可以解释 Gmail 的使用，但训练数据中偶然出现的天气规律可能误导模型。"
+    },
+    "takeaway": {
+      "en": "Learn the interaction structure alongside the recommendation task.",
+      "zh": "让交互结构与推荐任务一起学习。"
+    },
+    "steps": [
+      {
+        "en": [
+          "Represent",
+          "Features become nodes; candidate pairwise interactions become edges."
+        ],
+        "zh": [
+          "图表示",
+          "将特征视为节点，将候选两两交互视为边。"
+        ]
+      },
+      {
+        "en": [
+          "Select",
+          "An edge predictor with L₀ regularization learns a sparse set of useful connections."
+        ],
+        "zh": [
+          "自动筛选",
+          "通过边预测与 L₀ 正则化，学习稀疏的有效连接。"
+        ]
+      },
+      {
+        "en": [
+          "Reason",
+          "A graph neural network models the retained interactions to produce the prediction."
+        ],
+        "zh": [
+          "关系推理",
+          "图神经网络建模保留的交互，并汇总得到预测。"
+        ]
+      }
+    ],
+    "figures": [
+      {
+        "src": "sign-paper-framework.png",
+        "label": {
+          "en": "The original model architecture",
+          "zh": "论文中的模型框架"
+        },
+        "caption": {
+          "en": "Figure 1: edge prediction → node update → aggregation. The learned graph is part of the model, rather than a fixed input.",
+          "zh": "图 1：边预测 → 节点更新 → 汇总。图结构由模型学习，而非预先固定。"
+        },
+        "credit": {
+          "en": "Su et al., AAAI 2021 / arXiv v6, Figure 1. Extracted from the paper.",
+          "zh": "Su 等，AAAI 2021 / arXiv v6，图 1。提取自论文。"
+        }
+      }
+    ],
+    "stats": [
+      {
+        "value": "0.9580",
+        "label": {
+          "en": "Frappe AUC",
+          "zh": "Frappe 数据集 AUC"
+        }
+      },
+      {
+        "value": "0.9407",
+        "label": {
+          "en": "MovieLens-tag AUC",
+          "zh": "MovieLens-tag 数据集 AUC"
+        }
+      },
+      {
+        "value": "L₀",
+        "label": {
+          "en": "Automatic sparse interaction selection",
+          "zh": "自动稀疏交互选择"
+        }
+      }
+    ],
+    "evidence": {
+      "en": "Table 2 compares L₀-SIGN with seven baselines, including SIGN with all interactions. L₀-SIGN achieves the highest AUC and accuracy on both recommendation datasets. These are offline benchmark results.",
+      "zh": "表 2 对比了包括保留全部交互的 SIGN 在内的七种基线。L₀-SIGN 在两个推荐数据集上均取得最高 AUC 与准确率。以上是离线基准测试结果。"
+    },
+    "bars": {
+      "title": {
+        "en": "Frappe · AUC (paper Table 2)",
+        "zh": "Frappe · AUC（论文表 2）"
+      },
+      "rows": [
+        [
+          "xDeepFM",
+          0.9435
+        ],
+        [
+          "SIGN",
+          0.9448
+        ],
+        [
+          "L₀-SIGN",
+          0.958
+        ]
+      ],
+      "min": 0.92,
+      "max": 0.97
+    },
+    "capabilityTitle": {
+      "en": "Structure discovery, with a theoretical foundation.",
+      "zh": "以理论支撑的结构发现。"
+    },
+    "capability": {
+      "en": "This first-author work connects graph neural networks, sparse structure learning and recommendation. The information bottleneck principle and statistical interaction theory support the design; the learned edges make the retained interactions inspectable.",
+      "zh": "这项第一作者工作将图神经网络、稀疏结构学习与推荐系统结合。信息瓶颈原理和统计交互理论为设计提供支撑，学习到的边也让保留的交互可以被分析。"
+    },
+    "skills": [
+      {
+        "en": "Graph neural networks",
+        "zh": "图神经网络"
+      },
+      {
+        "en": "Sparse structure learning",
+        "zh": "稀疏结构学习"
+      },
+      {
+        "en": "Theory-informed modeling",
+        "zh": "理论指导建模"
+      }
+    ],
+    "links": [
+      {
+        "label": {
+          "en": "Read the paper",
+          "zh": "阅读论文"
+        },
+        "url": "https://arxiv.org/abs/2008.00404"
+      },
+      {
+        "label": {
+          "en": "Explore the code",
+          "zh": "查看代码"
+        },
+        "url": "https://github.com/ruizhang-ai/SIGN-Detecting-Beneficial-Feature-Interactions-for-Recommender-Systems"
+      },
+      {
+        "label": {
+          "en": "PaddleRec implementation",
+          "zh": "PaddleRec 实现"
+        },
+        "url": "https://github.com/PaddlePaddle/PaddleRec/tree/master/models/rank/sign"
+      }
+    ],
+    "paperTitle": "Detecting Beneficial Feature Interactions for Recommender Systems",
+    "authors": "Yixin Su, Rui Zhang, Sarah Erfani, Zhenghua Xu",
+    "source": "https://arxiv.org/abs/2008.00404",
+    "short": {
+      "en": "Learn which feature combinations help, and remove the noisy ones.",
+      "zh": "自动发现有益特征组合，减少无效交互带来的噪声。"
+    },
+    "teaser": {
+      "en": "Which connections matter?",
+      "zh": "哪些联系真正有用？"
+    }
+  },
+  {
+    "id": "iedr",
+    "name": "IEDR",
+    "color": "#12796d",
+    "soft": "#e8f7f0",
+    "number": "02",
+    "venue": "ACM TOIS 2025 · CCF-A",
+    "role": "first",
+    "area": {
+      "en": "Personalization & representation learning",
+      "zh": "个性化与表示学习"
+    },
+    "headline": {
+      "en": "Know the person.\nUnderstand the moment.",
+      "zh": "理解这个人，\n也理解此时此刻。"
+    },
+    "summary": {
+      "en": "A choice reflects both lasting preference and the current situation. IEDR learns them separately, while considering several contexts together.",
+      "zh": "一次选择既来自稳定偏好，也受到当下情境的影响。IEDR 同时考虑多种情境，并分别学习这两类因素。"
+    },
+    "question": {
+      "en": "Do you like hot food, or is it simply cold outside?",
+      "zh": "你喜欢热食，还是只是因为天气冷？"
+    },
+    "answer": {
+      "en": "If a model sees only winter meals, it may mistake a weather effect for a lasting taste. Time, weather and social setting can act together; isolating just one context misses that interplay.",
+      "zh": "如果模型只见过冬天的用餐记录，可能把天气影响误当成长期偏好。时间、天气和社交情境可以共同作用，只分析一种情境难以准确区分。"
+    },
+    "takeaway": {
+      "en": "Separate what stays stable from what changes with context.",
+      "zh": "区分跨情境稳定的偏好与随情境变化的因素。"
+    },
+    "steps": [
+      {
+        "en": [
+          "Connect contexts",
+          "Use feature graphs to capture the interplay of multiple contexts."
+        ],
+        "zh": [
+          "联合建模情境",
+          "使用特征图捕捉多种情境之间的相互作用。"
+        ]
+      },
+      {
+        "en": [
+          "Find the stable part",
+          "Context-invariant contrastive learning captures intrinsic factors."
+        ],
+        "zh": [
+          "学习稳定偏好",
+          "通过情境不变的对比学习捕捉内在因素。"
+        ]
+      },
+      {
+        "en": [
+          "Separate the influences",
+          "Bidirectional mutual-information minimization disentangles intrinsic and extrinsic representations."
+        ],
+        "zh": [
+          "分离不同影响",
+          "通过双向互信息最小化，解耦内在与外在因素表示。"
+        ]
+      }
+    ],
+    "figures": [
+      {
+        "src": "iedr-example.png",
+        "label": {
+          "en": "Why one context is not enough",
+          "zh": "为什么一种情境还不够"
+        },
+        "caption": {
+          "en": "Figure 1 contrasts a model that considers only social context with a model that also considers weather. Warm food is not necessarily a permanent preference.",
+          "zh": "图 1 对比了只考虑社交情境与同时考虑天气的模型。选择热食，并不一定意味着一直偏好热食。"
+        },
+        "credit": {
+          "en": "Su et al., IEDR, arXiv v2, Figure 1. Original figure.",
+          "zh": "Su 等，IEDR，arXiv v2，图 1。论文原图。"
+        }
+      },
+      {
+        "src": "iedr-framework.png",
+        "label": {
+          "en": "Two factors, one recommendation",
+          "zh": "两类因素，一个推荐结果"
+        },
+        "caption": {
+          "en": "Figure 2: user and item branches both learn intrinsic and extrinsic factors. Contrastive learning and disentanglement support the recommendation objective together.",
+          "zh": "图 2：用户与物品两侧均学习内外因素。对比学习与解耦共同支持推荐目标。"
+        },
+        "credit": {
+          "en": "Su et al., IEDR, arXiv v2, Figure 2. Extracted from the paper.",
+          "zh": "Su 等，IEDR，arXiv v2，图 2。提取自论文。"
+        }
+      }
+    ],
+    "stats": [
+      {
+        "value": "+4.14%",
+        "label": {
+          "en": "Yelp NDCG@10 · relative gain",
+          "zh": "Yelp NDCG@10 · 相对提升"
+        }
+      },
+      {
+        "value": "+3.66%",
+        "label": {
+          "en": "Frappe NDCG@10 · relative gain",
+          "zh": "Frappe NDCG@10 · 相对提升"
+        }
+      },
+      {
+        "value": "2",
+        "label": {
+          "en": "Explicit factor types: intrinsic & extrinsic",
+          "zh": "显式因素类型：内在与外在"
+        }
+      }
+    ],
+    "evidence": {
+      "en": "Table 3 reports improvements over the strongest compared baseline: Yelp NDCG@10 rises from 50.94 to 53.05, and Frappe from 71.49 to 74.11. Gains are relative percentages, not percentage-point changes.",
+      "zh": "表 3 报告相对最强对比基线的提升：Yelp NDCG@10 从 50.94 提升至 53.05，Frappe 从 71.49 提升至 74.11。提升幅度为相对百分比，而非百分点。"
+    },
+    "bars": {
+      "title": {
+        "en": "Yelp · NDCG@10 (paper Table 3, % scale)",
+        "zh": "Yelp · NDCG@10（论文表 3，百分数标度）"
+      },
+      "rows": [
+        [
+          "AutoInt",
+          50.8
+        ],
+        [
+          "SIGN",
+          50.94
+        ],
+        [
+          "IEDR",
+          53.05
+        ]
+      ],
+      "min": 45,
+      "max": 55
+    },
+    "capabilityTitle": {
+      "en": "Model the reasons behind a choice.",
+      "zh": "建模选择背后的不同因素。"
+    },
+    "capability": {
+      "en": "This first-author work illustrates a research focus on personalized user modeling: combine context graphs, contrastive learning and information-theoretic disentanglement to give learned representations explicit meaning.",
+      "zh": "这项第一作者工作体现了对个性化用户建模的研究：结合情境图、对比学习和基于信息论的解耦，为学习到的表示赋予明确含义。"
+    },
+    "skills": [
+      {
+        "en": "Personalized user modeling",
+        "zh": "个性化用户建模"
+      },
+      {
+        "en": "Contrastive learning",
+        "zh": "对比学习"
+      },
+      {
+        "en": "Information-theoretic disentanglement",
+        "zh": "信息论解耦"
+      }
+    ],
+    "links": [
+      {
+        "label": {
+          "en": "Read the paper",
+          "zh": "阅读论文"
+        },
+        "url": "https://arxiv.org/abs/2503.03524"
+      },
+      {
+        "label": {
+          "en": "Explore the code",
+          "zh": "查看代码"
+        },
+        "url": "https://github.com/ethanmock/IEDR"
+      }
+    ],
+    "paperTitle": "Intrinsic and Extrinsic Factor Disentanglement for Recommendation in Various Context Scenarios",
+    "authors": "Yixin Su, Wei Jiang, Fangquan Lin, Cheng Yang, Sarah Erfani, Junhao Gan, Yunxiang Zhao, Ruixuan Li, Rui Zhang",
+    "source": "https://arxiv.org/abs/2503.03524",
+    "short": {
+      "en": "Separate lasting preference from the situation around a choice.",
+      "zh": "从用户选择中，分离稳定偏好与情境影响。"
+    },
+    "teaser": {
+      "en": "Preference, or circumstance?",
+      "zh": "是偏好，还是情境？"
+    }
+  },
+  {
+    "id": "unipmt",
+    "name": "UniPMT",
+    "color": "#b1533c",
+    "soft": "#fff0e8",
+    "number": "03",
+    "venue": "Nature Machine Intelligence 2025",
+    "role": "cofirst",
+    "area": {
+      "en": "AI × biology & medicine",
+      "zh": "人工智能 × 生物医学"
+    },
+    "headline": {
+      "en": "Three biological partners.\nOne learning framework.",
+      "zh": "三类生物实体，\n一个学习框架。"
+    },
+    "summary": {
+      "en": "Immune recognition connects three partners: a peptide fragment, the MHC molecule that presents it, and a T-cell receptor (TCR) that recognizes it. UniPMT learns their binding relationships together.",
+      "zh": "免疫识别需要三类实体配合：多肽是待识别的片段，MHC 负责呈递，TCR 是 T 细胞的识别受体。UniPMT 联合学习它们的结合关系。"
+    },
+    "question": {
+      "en": "Can learning the parts help us predict the whole?",
+      "zh": "学习局部结合，能帮助预测整体识别吗？"
+    },
+    "answer": {
+      "en": "Peptide–MHC, peptide–TCR and peptide–MHC–TCR observations contain complementary information. Separate models leave those connections underused.",
+      "zh": "多肽–MHC、多肽–TCR 和多肽–MHC–TCR 的观测包含互补信息。分别训练独立模型，难以充分利用这些联系。"
+    },
+    "takeaway": {
+      "en": "Learn the linked biological tasks together, on a shared graph.",
+      "zh": "在共享图上，联合学习相互关联的生物任务。"
+    },
+    "steps": [
+      {
+        "en": [
+          "Represent the biology",
+          "Peptides, MHCs and TCRs become nodes in a graph of binding relationships."
+        ],
+        "zh": [
+          "表示生物关系",
+          "将多肽、MHC 和 TCR 建成节点，用结合关系构建图。"
+        ]
+      },
+      {
+        "en": [
+          "Share information",
+          "Sequence representations and graph learning connect evidence across the biological entities."
+        ],
+        "zh": [
+          "共享信息",
+          "结合序列表示与图学习，在生物实体之间传递信息。"
+        ]
+      },
+      {
+        "en": [
+          "Unify the tasks",
+          "A multitask framework jointly predicts P–M, P–T and P–M–T binding."
+        ],
+        "zh": [
+          "统一任务",
+          "使用多任务框架，联合预测 P–M、P–T 和 P–M–T 结合。"
+        ]
+      }
+    ],
+    "figures": [
+      {
+        "src": "unipmt-framework.png",
+        "label": {
+          "en": "A unified view of binding",
+          "zh": "统一的结合学习视角"
+        },
+        "caption": {
+          "en": "Figure 1: graph construction and graph learning feed a unified binding-learning framework with three connected tasks.",
+          "zh": "图 1：图构建和图学习，为包含三项关联任务的统一结合学习框架提供表示。"
+        },
+        "credit": {
+          "en": "Zhao et al., Nature Machine Intelligence 7, 650–660 (2025), Figure 1. Original, unmodified figure.",
+          "zh": "Zhao 等，Nature Machine Intelligence 7, 650–660（2025），图 1。未经修改的原图。"
+        },
+        "license": true
+      },
+      {
+        "src": "unipmt-results.png",
+        "label": {
+          "en": "Evidence across three prediction tasks",
+          "zh": "三项预测任务的实验证据"
+        },
+        "caption": {
+          "en": "Figure 2 compares UniPMT with task-specific baselines. ROC-AUC and PR-AUC summarize performance under the paper’s evaluation protocols.",
+          "zh": "图 2 将 UniPMT 与各任务的基线进行比较。ROC-AUC 和 PR-AUC 描述论文评估方案下的预测表现。"
+        },
+        "credit": {
+          "en": "Zhao et al., Nature Machine Intelligence (2025), Figure 2. Original, unmodified figure.",
+          "zh": "Zhao 等，Nature Machine Intelligence（2025），图 2。未经修改的原图。"
+        },
+        "license": true
+      }
+    ],
+    "stats": [
+      {
+        "value": "3",
+        "label": {
+          "en": "Binding tasks in one framework",
+          "zh": "同一框架中的结合任务"
+        }
+      },
+      {
+        "value": "72.15%",
+        "label": {
+          "en": "PR-AUC · validated neoantigen triplets",
+          "zh": "PR-AUC · 实验验证的新抗原三元组"
+        }
+      },
+      {
+        "value": "312",
+        "label": {
+          "en": "Experimentally validated positive triplets",
+          "zh": "经实验验证的阳性三元组"
+        }
+      }
+    ],
+    "evidence": {
+      "en": "In the neoantigen study (Figure 3), 312 experimentally validated positive triplets are evaluated alongside generated negatives. UniPMT achieves 72.15% PR-AUC and 94.29% ROC-AUC. The scope is class I MHC and the TCR β-chain CDR3; binding prediction is a research result, not a demonstrated treatment outcome.",
+      "zh": "新抗原研究（图 3）使用 312 个经实验验证的阳性三元组，并构造阴性样本进行评估。UniPMT 取得 72.15% PR-AUC 和 94.29% ROC-AUC。研究范围为 I 类 MHC 与 TCR β 链 CDR3；结合预测结果并不等同于治疗效果。"
+    },
+    "capabilityTitle": {
+      "en": "Bring relational learning to a biological question.",
+      "zh": "将关系学习用于生物问题。"
+    },
+    "capability": {
+      "en": "As a co-first-author contribution, this work extends graph learning and multitask modeling into immune recognition. It demonstrates an interdisciplinary research direction that connects machine learning methods with biological relationships and experimental validation data.",
+      "zh": "作为共同第一作者参与的工作，这项研究将图学习与多任务建模拓展到免疫识别，体现了连接机器学习方法、生物关系和实验验证数据的跨学科研究方向。"
+    },
+    "skills": [
+      {
+        "en": "Heterogeneous graph learning",
+        "zh": "异构图学习"
+      },
+      {
+        "en": "Multitask modeling",
+        "zh": "多任务建模"
+      },
+      {
+        "en": "Interdisciplinary AI",
+        "zh": "跨学科人工智能"
+      }
+    ],
+    "links": [
+      {
+        "label": {
+          "en": "Read the paper",
+          "zh": "阅读论文"
+        },
+        "url": "https://www.nature.com/articles/s42256-025-01002-0"
+      },
+      {
+        "label": {
+          "en": "Explore the code",
+          "zh": "查看代码"
+        },
+        "url": "https://github.com/ethanmock/UniPMT"
+      },
+      {
+        "label": {
+          "en": "Data & model weights",
+          "zh": "数据与模型权重"
+        },
+        "url": "https://zenodo.org/records/14630611"
+      }
+    ],
+    "paperTitle": "A unified deep framework for peptide–major histocompatibility complex–T cell receptor binding prediction",
+    "authors": "Yunxiang Zhao, Jijun Yu, Yixin Su, You Shu, Enhao Ma, Jing Wang, Shuyang Jiang, Congwen Wei, Dongsheng Li, Zhen Huang, Gong Cheng, Hongguang Ren, Jiannan Feng",
+    "source": "https://www.nature.com/articles/s42256-025-01002-0",
+    "short": {
+      "en": "Learn three connected immune binding tasks in one graph framework.",
+      "zh": "以图学习统一三项关联的免疫结合预测任务。"
+    },
+    "teaser": {
+      "en": "Will a T cell recognize it?",
+      "zh": "T 细胞会识别它吗？"
+    }
+  }
+]
