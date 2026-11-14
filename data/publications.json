@@ -1,5 +1,19 @@
 [
   {
+    "year": 2027,
+    "title": "Interruption Is Negative Help: A Saved-Effort Currency for Proactive Personalized Assistance",
+    "authors": "Yixin Su, Zhiyuan Ma, Bing Tian Dai, Yuhua Li, Yueguo Chen, Rui Zhang*",
+    "venue": "SIGKDD 2027",
+    "badges": [
+      "CCF-A",
+      "First author"
+    ],
+    "links": [],
+    "topics": [
+      "llm"
+    ]
+  },
+  {
     "year": 2026,
     "title": "VCoT-SQL: Enhancing Text-to-SQL Generation through Dual Chain-of-Thought Validation Training",
     "authors": "Rui Zhang, Yujia Su, Ruixuan Li, Yuhua Li, Yixin Su*",
