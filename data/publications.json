@@ -11,6 +11,14 @@
     "links": [],
     "topics": [
       "llm"
+    ],
+    "summary": {
+      "en": "Use saved user effort to weigh help against interruption and decide how many steps an assistant should execute.",
+      "zh": "用节省的用户步骤衡量帮助与打扰，决定助手应该主动执行多少步。"
+    },
+    "aliases": [
+      "SAVE",
+      "Selective Adaptive Value-aware Execution"
     ]
   },
   {
@@ -106,7 +114,11 @@
     ],
     "topics": [
       "rec"
-    ]
+    ],
+    "summary": {
+      "en": "Separate lasting preferences from the effects of changing contexts for recommendation.",
+      "zh": "在推荐中区分稳定偏好与变化情境的影响。"
+    }
   },
   {
     "year": 2025,
@@ -125,7 +137,11 @@
     ],
     "topics": [
       "bio"
-    ]
+    ],
+    "summary": {
+      "en": "Jointly model peptide–MHC–TCR binding with two related binding tasks.",
+      "zh": "结合两项相关结合任务，联合建模多肽–MHC–TCR 结合关系。"
+    }
   },
   {
     "year": 2025,
@@ -272,7 +288,11 @@
     ],
     "topics": [
       "fi"
-    ]
+    ],
+    "summary": {
+      "en": "Learn sparse feature interactions to retain useful relationships and suppress noise.",
+      "zh": "学习稀疏特征交互，保留有用关系并抑制噪声。"
+    }
   },
   {
     "year": 2021,

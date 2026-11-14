@@ -2,6 +2,9 @@
 """Inject content + config from data/ into index.html.
 
 Sources of truth (edit these, never hand-edit index.html):
+    templates/home.html    readable homepage layout and component logic
+    data/site.json         bilingual biography, navigation, news UI, recruitment,
+                           profile links and footer copy
     data/news.json          news / updates list
     data/publications.json  publications list
     data/config.json        site settings: accent, defaultLang,
@@ -75,7 +78,9 @@ def rebuild():
                       html_text, re.S)
     if not tpl_m:
         raise SystemExit("[build] template script block not found in index.html")
-    template = json.loads(tpl_m.group(2).strip())
+    template_path = os.path.join(ROOT, "templates", "home.html")
+    with open(template_path, encoding="utf-8") as source:
+        template = source.read()
 
     def load(name):
         return json.load(open(os.path.join(ROOT, "data", name), encoding="utf-8"))
@@ -84,6 +89,11 @@ def rebuild():
     pubs = load("publications.json")
     config_path = os.path.join(ROOT, "data", "config.json")
     config = json.load(open(config_path, encoding="utf-8")) if os.path.exists(config_path) else {}
+
+    copy = load("site.json")
+    if template.count("  T = {};") != 1:
+        raise SystemExit("[build] expected one `T = {};` content placeholder in templates/home.html")
+    template = template.replace("  T = {};", "  T = " + safe_json(copy) + ";", 1)
 
     # Replace arrays (pubs first so offsets stay valid; each is recomputed).
     for name, data in (("pubs", pubs), ("news", news)):

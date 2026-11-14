@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yixin Su (苏奕昕) — Associate Professor, HUST</title>
+<script src="619aff30-5465-45fa-8b71-6f46e812a15f"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="assets/site-fonts.css">
+<style>
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;background:#ffffff;}
+::selection{background:#1a3a5c;color:#fff;}
+a{color:#1a3a5c;text-decoration:none;}
+a:hover{opacity:.75;}
+
+.pub-legend{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin:18px 0 26px;font-size:12px;color:#615f68;}
+.pub-legend-item{display:inline-flex;align-items:center;gap:7px;}
+.pub-badge{display:inline-flex;align-items:center;justify-content:center;min-height:25px;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:10.5px;font-weight:650;letter-spacing:.02em;border:1px solid;border-radius:999px;padding:3px 10px;white-space:nowrap;}
+.pub-role{width:28px;height:28px;padding:0;font-family:system-ui,sans-serif;font-size:17px;font-weight:700;border-radius:9px;box-shadow:0 2px 5px #24213b08;}
+.pub-row{display:grid;grid-template-columns:52px minmax(0,1fr);gap:18px;margin:0 0 12px;padding:22px 24px;background:#fff;border:1px solid #e8e5ed;border-radius:16px;box-shadow:0 3px 14px #30264904;transition:border-color .18s,box-shadow .18s;}
+.pub-row:hover{border-color:#cac2df;box-shadow:0 5px 20px #3026490b;}
+.pub-year{font-family:'Newsreader',Georgia,serif;font-size:19px;color:#9589ab;padding-top:2px;}
+.pub-link{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:550;color:#514b69;padding:4px 9px;background:#f7f5fa;border-radius:7px;}
+.pub-link:hover{background:#eee9f6;}
+@media(max-width:600px){.pub-row{grid-template-columns:1fr;gap:7px;padding:18px 16px;}.pub-year{font-family:system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;}.pub-legend{gap:10px 14px;}}
+
+.research-showcase{height:490px;}
+@media(max-width:760px){.research-showcase{height:650px;}}
+
+.hero-affiliation{font-size:14px;line-height:1.65;color:#6b6864;margin:22px 0 0;max-width:65ch;}
+.hero-statement{font-size:clamp(19px,2.3vw,25px);line-height:1.65;letter-spacing:-.015em;color:#283e52;margin:24px 0;max-width:49ch;}
+.hero-background{font-size:14px;line-height:1.8;color:#77736d;margin:0 0 25px;max-width:68ch;}
+.hero-research-link,.profile-link{font-size:13px;font-weight:550;padding:10px 15px;border:1px solid #dbe1e7;border-radius:999px;display:inline-flex;align-items:center;gap:10px;}
+.hero-research-link{background:#f3f6f9;}
+.news-toggle{margin-top:22px;background:none;border:0;border-bottom:1px solid #c2cbd4;padding:8px 0;color:#1a3a5c;font:inherit;font-size:13px;cursor:pointer;}
+.pub-summary{font-size:14px;line-height:1.7;color:#4b5865;margin:0 0 10px;max-width:76ch;}
+.join-details{display:grid;grid-template-columns:1fr 1.5fr;gap:30px;margin:0 0 28px;padding:24px 0;border-top:1px solid #dbe3ea;}
+.join-details h3{font-size:13px;margin:0 0 10px;color:#1a3a5c;}
+.join-details p{font-size:14px;line-height:1.8;color:#625f5b;margin:0;}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #315c85;outline-offset:4px;}
+@media(max-width:600px){.nav-secondary{display:none;}.home-nav>div{gap:14px!important;}.home-nav>div>a{font-size:12px!important;}.hero-statement{font-size:20px;}.join-details{grid-template-columns:1fr;gap:20px;}.news-row{grid-template-columns:66px minmax(0,1fr)!important;gap:12px!important;}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after{animation:none!important;transition:none!important;}}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+</style>
+</helmet>
+
+<div style="--accent:{{ accent }};--accent-strong:{{ accentStrong }};font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,'PingFang SC','Microsoft YaHei',sans-serif;color:#1c1b1a;background:#ffffff;overflow-x:hidden;">
+
+  <nav class="home-nav" aria-label="{{ t.nav.about }}" style="position:fixed;top:0;left:0;right:0;height:60px;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,5vw,64px);background:rgba(255,255,255,0.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid {{ navBorder }};transition:border-color .35s ease;">
+    <a href="#top" style="font-family:'Newsreader',Georgia,serif;font-size:19px;font-weight:600;color:#1c1b1a;letter-spacing:-.01em;">Yixin Su</a>
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.9vw,28px);">
+      <a href="#about" class="nav-secondary" style="font-size:13.5px;color:#6b6864;font-weight:500;" style-hover="color:#1c1b1a;">{{ t.nav.about }}</a>
+      <a href="#news" class="nav-secondary" style="font-size:13.5px;color:#6b6864;font-weight:500;" style-hover="color:#1c1b1a;">{{ t.nav.news }}</a>
+      <a href="#research" style="font-size:13.5px;color:#6b6864;font-weight:500;" style-hover="color:#1c1b1a;">{{ t.nav.research }}</a>
+      <a href="#pubs" style="font-size:13.5px;color:#6b6864;font-weight:500;" style-hover="color:#1c1b1a;">{{ t.nav.pubs }}</a>
+      <a href="#recruit" style="font-size:13.5px;color:#6b6864;font-weight:500;" style-hover="color:#1c1b1a;">{{ t.nav.recruit }}</a>
+      <button onclick="{{ toggleLang }}" style="border:1px solid #d8d5d0;background:transparent;color:#1c1b1a;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11.5px;font-weight:600;letter-spacing:.06em;padding:5px 11px;border-radius:999px;cursor:pointer;" style-hover="border-color:var(--accent,#1a3a5c);color:var(--accent,#1a3a5c);">{{ langBtn }}</button>
+    </div>
+  </nav>
+
+  <header id="top" style="scroll-margin-top:60px;">
+    <div id="about" style="scroll-margin-top:70px;max-width:1120px;margin:0 auto;padding:clamp(120px,17vh,170px) clamp(20px,5vw,64px) clamp(70px,10vh,100px);">
+      <div style="display:grid;grid-template-columns:minmax(0,760px);gap:clamp(28px,6vw,80px);align-items:start;">
+        <div style="animation:fadeUp .85s cubic-bezier(.22,.61,.36,1) both;">
+          <div style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#1a3a5c);margin-bottom:22px;">{{ t.hero.kicker }}</div>
+          <h1 style="font-family:'Newsreader','Noto Serif SC',Georgia,serif;font-size:clamp(46px,7.5vw,82px);font-weight:500;line-height:1;letter-spacing:-.025em;margin:0;">{{ heroName }} <span style="color:#b6b3ae;font-size:.4em;font-weight:400;letter-spacing:0;">{{ heroSuffix }}</span></h1>
+          <p class="hero-affiliation">{{ t.hero.affiliation }}</p>
+          <p class="hero-statement">{{ t.hero.intro }}</p>
+          <p class="hero-background">{{ t.hero.background }}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
+            <sc-for list="{{ interests }}" as="it" hint-placeholder-count="5">
+              <span style="font-size:12.5px;font-family:ui-monospace,'SF Mono',Menlo,monospace;color:#4a4844;border:1px solid #e5e3df;border-radius:999px;padding:6px 13px;background:#faf9f7;">{{ it }}</span>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+            <a class="hero-research-link" href="#research">{{ t.hero.researchLink }} <span aria-hidden="true">↓</span></a>
+            <sc-for list="{{ t.hero.links }}" as="l"><a class="profile-link" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }} ↗</a></sc-for>
+            <a href="mailto:suyixin@hust.edu.cn" style="background:var(--accent,#1a3a5c);color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:8px;" style-hover="background:var(--accent-strong,#12283f);">suyixin@hust.edu.cn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="news" style="scroll-margin-top:60px;background:#f6f5f3;border-top:1px solid #ecebe8;border-bottom:1px solid #ecebe8;">
+    <div style="max-width:1120px;margin:0 auto;padding:clamp(64px,9vh,90px) clamp(20px,5vw,64px);">
+      <div style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#1a3a5c);margin-bottom:14px;">{{ t.news.kicker }}</div>
+      <h2 style="font-family:'Newsreader','Noto Serif SC',Georgia,serif;font-size:clamp(30px,4.5vw,46px);font-weight:500;letter-spacing:-.02em;line-height:1.05;margin:0 0 34px;">{{ t.news.title }}</h2>
+      <ol style="list-style:none;margin:0;padding:0;">
+        <sc-for list="{{ newsView }}" as="n" hint-placeholder-count="3">
+          <li class="news-row" style="display:grid;grid-template-columns:98px 1fr;gap:22px;padding:17px 0;border-top:1px solid #e2e0dc;align-items:baseline;">
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12.5px;color:var(--accent,#1a3a5c);font-weight:600;letter-spacing:.01em;">{{ n.date }}</span>
+            <span style="font-size:15.5px;line-height:1.6;color:#2a2926;">{{ n.text }}<sc-if value="{{ n.hasLink }}"> <a href="{{ n.link }}" rel="noopener" style="border-bottom:1px solid var(--accent,#1a3a5c);">{{ n.linkLabel }}</a></sc-if></span>
+          </li>
+        </sc-for>
+      </ol>
+      <button class="news-toggle" onclick="{{ toggleNews }}" aria-expanded="{{ newsExpanded }}" aria-controls="news-archive">{{ newsToggleLabel }}</button>
+      <div id="news-archive"><sc-if value="{{ newsExpanded }}"><ol style="list-style:none;margin:18px 0 0;padding:0;">
+        <sc-for list="{{ archivedNews }}" as="n">
+          <li class="news-row" style="display:grid;grid-template-columns:98px 1fr;gap:22px;padding:17px 0;border-top:1px solid #e2e0dc;align-items:baseline;">
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12.5px;color:var(--accent);font-weight:600;">{{ n.date }}</span>
+            <span style="font-size:15px;line-height:1.6;color:#2a2926;">{{ n.text }}<sc-if value="{{ n.hasLink }}"> <a href="{{ n.link }}" rel="noopener">{{ n.linkLabel }} ↗</a></sc-if></span>
+          </li>
+        </sc-for>
+      </ol></sc-if></div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showDemo }}" hint-placeholder-val="{{ true }}">
+  <section id="research" style="scroll-margin-top:60px;">
+    <div style="max-width:1120px;margin:0 auto;padding:clamp(70px,10vh,100px) clamp(20px,5vw,64px);">
+      <div style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#1a3a5c);margin-bottom:14px;">{{ t.research.kicker }}</div>
+      <h2 style="font-family:'Newsreader','Noto Serif SC',Georgia,serif;font-size:clamp(30px,4.5vw,46px);font-weight:500;letter-spacing:-.02em;line-height:1.08;margin:0 0 16px;max-width:20ch;">{{ t.research.title }}</h2>
+      <p style="font-size:15.5px;line-height:1.65;color:#6b6864;margin:0 0 26px;max-width:62ch;">{{ t.research.desc }}</p>
+      <div class="research-showcase" style="height:{{ researchHeight }};position:relative;border:1px solid #e5e3df;border-radius:16px;overflow:hidden;background:#faf9fc;">
+        <sc-if value="{{ hasDemo }}" hint-placeholder-val="{{ false }}">
+          <iframe data-research-url="{{ showcaseUrl }}" title="Research highlights" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:#fff;"></iframe>
+        </sc-if>
+        <sc-if value="{{ noDemo }}" hint-placeholder-val="{{ true }}">
+          <div style="position:absolute;inset:16px;border:1.5px dashed #d3d0cb;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:26px;">
+            <span style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#1a3a5c);border:1px solid #cdd8e2;border-radius:999px;padding:5px 13px;background:#fff;">{{ t.research.slotLabel }}</span>
+            <div style="font-family:'Newsreader','Noto Serif SC',Georgia,serif;font-size:clamp(20px,2.6vw,27px);color:#3a3936;">{{ t.research.slotTitle }}</div>
+            <p style="font-size:14px;line-height:1.65;color:#8a8781;max-width:46ch;margin:0;">{{ t.research.slotHint }}</p>
+            <code style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;color:#4a4844;background:#f0efec;border:1px solid #e2e0dc;border-radius:6px;padding:5px 10px;">demoUrl = "demo.html"</code>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <section id="pubs" style="scroll-margin-top:60px;background:#f6f5f3;border-top:1px solid #ecebe8;border-bottom:1px solid #ecebe8;">
+    <div style="max-width:1120px;margin:0 auto;padding:clamp(70px,10vh,100px) clamp(20px,5vw,64px);">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:8px;">
+        <div style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#1a3a5c);">{{ t.pubs.kicker }}</div>
+        <div style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;color:#8a8781;">{{ countLabel }}</div>
+      </div>
+      <h2 style="font-family:'Newsreader','Noto Serif SC',Georgia,serif;font-size:clamp(30px,4.5vw,46px);font-weight:500;letter-spacing:-.02em;line-height:1.05;margin:0 0 6px;">{{ t.pubs.title }}</h2>
+      <div class="pub-legend" aria-label="{{ t.pubs.note }}">
+        <span style="font-weight:600;color:#514b69;">{{ roleLegendLabel }}</span>
+        <sc-for list="{{ roleLegend }}" as="r"><span class="pub-legend-item"><span class="pub-badge pub-role" style="{{ r.style }}" aria-hidden="true">{{ r.label }}</span><span>{{ r.title }}</span></span></sc-for>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:28px;">
+        <input aria-label="{{ t.pubs.searchPh }}" value="{{ query }}" oninput="{{ onSearch }}" placeholder="{{ t.pubs.searchPh }}" style="flex:1 1 240px;min-width:200px;font-family:inherit;font-size:14px;color:#1c1b1a;background:#fff;border:1px solid #dddad5;border-radius:999px;padding:10px 18px;outline:none;" style-focus="border-color:var(--accent,#1a3a5c);">
+        <div style="display:flex;flex-wrap:wrap;gap:7px;">
+          <sc-for list="{{ filterChips }}" as="c" hint-placeholder-count="7">
+            <button onclick="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+
+      <ol style="list-style:none;margin:0;padding:0;">
+        <sc-for list="{{ filteredPubs }}" as="p" hint-placeholder-count="6">
+          <li class="pub-row">
+            <span class="pub-year">{{ p.year }}</span>
+            <div>
+              <div style="font-family:'Newsreader','Noto Serif SC',Georgia,serif;font-size:19px;font-weight:500;line-height:1.32;letter-spacing:-.01em;color:#1c1b1a;margin-bottom:6px;">{{ p.title }}</div>
+              <sc-if value="{{ p.hasSummary }}"><p class="pub-summary">{{ p.summary }}</p></sc-if>
+              <div style="font-size:13.5px;line-height:1.6;color:#6b6864;margin-bottom:9px;">
+                <sc-for list="{{ p.authors }}" as="a" hint-placeholder-count="6"><span style="{{ a.style }}">{{ a.txt }}</span></sc-for>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;">
+                <span style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:14px;color:#3a3936;">{{ p.venue }}</span>
+                <sc-for list="{{ p.badges }}" as="b" hint-placeholder-count="1"><span class="{{ b.className }}" style="{{ b.style }}" title="{{ b.title }}" aria-label="{{ b.title }}">{{ b.label }}</span></sc-for>
+                <sc-for list="{{ p.links }}" as="l" hint-placeholder-count="0"><a class="pub-link" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }} <span aria-hidden="true">↗</span></a></sc-for>
+              </div>
+            </div>
+          </li>
+        </sc-for>
+      </ol>
+      <sc-if value="{{ noResults }}"><p style="font-size:15px;color:#8a8781;padding:26px 0;border-top:1px solid #e2e0dc;">{{ t.pubs.empty }}</p></sc-if>
+    </div>
+  </section>
+
+  <section id="recruit" style="scroll-margin-top:60px;">
+    <div style="max-width:1120px;margin:0 auto;padding:clamp(70px,10vh,100px) clamp(20px,5vw,64px);">
+      <div style="border:1px solid #dbe3ea;border-radius:20px;background:linear-gradient(160deg,#f4f7fa,#f7f6f4);padding:clamp(32px,5vw,60px);position:relative;overflow:hidden;">
+        <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,#1a3a5c);"></div>
+        <div style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#1a3a5c);margin-bottom:14px;">{{ t.recruit.kicker }}</div>
+        <h2 style="font-family:'Newsreader','Noto Serif SC',Georgia,serif;font-size:clamp(28px,4.2vw,44px);font-weight:500;letter-spacing:-.02em;line-height:1.08;margin:0 0 20px;max-width:22ch;">{{ t.recruit.title }}</h2>
+        <p style="font-size:16.5px;line-height:1.75;color:#33302e;margin:0 0 28px;max-width:60ch;">{{ t.recruit.body }}</p>
+        <div class="join-details"><div><h3>{{ t.recruit.pathsTitle }}</h3><p>{{ t.recruit.paths }}</p></div><div><h3>{{ t.recruit.emailTitle }}</h3><p>{{ t.recruit.email }}</p></div></div>
+        <a href="mailto:suyixin@hust.edu.cn" style="background:var(--accent,#1a3a5c);color:#fff;padding:12px 22px;border-radius:999px;font-size:14.5px;font-weight:500;display:inline-flex;align-items:center;gap:9px;" style-hover="background:var(--accent-strong,#12283f);">{{ t.recruit.cta }}</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#ffffff;">
+    <div style="max-width:1120px;margin:0 auto;padding:44px clamp(20px,5vw,64px);display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:baseline;">
+      <div style="font-size:13px;color:#8a8781;line-height:1.6;">
+        <span style="color:#3a3936;font-weight:500;">Yixin Su</span> · {{ t.footer.affil }}<br>
+        <a href="mailto:suyixin@hust.edu.cn">suyixin@hust.edu.cn</a>
+      </div>
+      <div style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11.5px;color:#a8a5a0;text-align:right;">{{ t.footer.updated }}</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;accent&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#1a3a5c&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#7a1f2b&quot;, &quot;#1a3a5c&quot;, &quot;#2f5d4f&quot;, &quot;#333333&quot;], &quot;section&quot;: &quot;Theme&quot;}, &quot;defaultLang&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;en&quot;, &quot;options&quot;: [&quot;en&quot;, &quot;zh&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Content&quot;}, &quot;showResearchDemo&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Content&quot;}, &quot;demoUrl&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;demo.html&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Content&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lang: this.preferredLanguage((props && props.defaultLang) || 'en'),
+      newsExpanded: false,
+      filter: 'all',
+      query: '',
+      researchHeight: null,
+      scrolled: false
+    };
+  }
+
+  preferredLanguage(fallback) {
+    const requested = new URLSearchParams(window.location.search).get('lang');
+    if (requested === 'en' || requested === 'zh') return requested;
+    try {
+      const saved = localStorage.getItem('yixin-lang');
+      if (saved === 'en' || saved === 'zh') return saved;
+    } catch (_) {}
+    return fallback;
+  }
+
+  T = {};
+
+  filters = [
+    { key: 'all', en: 'All', zh: '全部' },
+    { key: 'llm', en: 'LLM & Foundation', zh: '大模型' },
+    { key: 'rec', en: 'Recommender', zh: '推荐系统' },
+    { key: 'fi', en: 'Feature Interaction', zh: '特征交互' },
+    { key: 'gnn', en: 'Graph NN', zh: '图神经网络' },
+    { key: 'bio', en: 'AI × Bio/Med', zh: '医工交叉' },
+    { key: 'nlp', en: 'NLP', zh: '自然语言' }
+  ];
+
+  news = [];
+
+  pubs = [];
+
+  componentDidMount() {
+    this.rememberLanguage(this.state.lang);
+    this._onScroll = () => {
+      const s = window.scrollY > 12;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onResearchResize = (event) => {
+      const frame = document.querySelector('#research iframe');
+      if (event.origin !== window.location.origin || !frame || event.source !== frame.contentWindow) return;
+      const data = event.data;
+      if (!data || data.type !== 'yixin-research-height' || !Number.isFinite(data.height)) return;
+      const height = Math.max(180, Math.min(2400, Math.ceil(data.height) + 2));
+      if (height !== this.state.researchHeight) this.setState({ researchHeight: height });
+    };
+    window.addEventListener('message', this._onResearchResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('message', this._onResearchResize);
+  }
+
+  rememberLanguage(lang) {
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    const frame = document.querySelector('#research iframe');
+    if (frame) {
+      const demoUrl = ((this.props && this.props.demoUrl) || 'demo.html').trim();
+      const src = new URL(demoUrl, window.location.href);
+      src.searchParams.set('lang', lang);
+      if (frame.src !== src.href) frame.src = src.href;
+    }
+    try { localStorage.setItem('yixin-lang', lang); } catch (_) {}
+    const url = new URL(window.location.href);
+    url.searchParams.set('lang', lang);
+    history.replaceState(null, '', url.pathname + url.search + url.hash);
+  }
+  toggleLang = () => {
+    const lang = this.state.lang === 'en' ? 'zh' : 'en';
+    this.rememberLanguage(lang);
+    this.setState({ lang });
+  };
+  toggleNews = () => this.setState(s => ({ newsExpanded: !s.newsExpanded }));
+  setFilter = (key) => this.setState({ filter: key });
+  onSearch = (e) => this.setState({ query: e.target.value });
+
+  darken(hex, f) {
+    const h = hex.replace('#', '');
+    const n = parseInt(h.length === 3 ? h.split('').map(c => c + c).join('') : h, 16);
+    let r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+    r = Math.round(r * (1 - f)); g = Math.round(g * (1 - f)); b = Math.round(b * (1 - f));
+    return '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
+  }
+
+  tokenize(authors) {
+    const parts = authors.split('Yixin Su');
+    const toks = [];
+    parts.forEach((p, i) => {
+      if (p) toks.push({ txt: p, style: '' });
+      if (i < parts.length - 1) toks.push({ txt: 'Yixin Su', style: 'font-weight:700;color:#1c1b1a;' });
+    });
+    return toks;
+  }
+
+  publicationBadge(badge, lang) {
+    const roles = {
+      'First author': ['①', 'First author', '第一作者', '#315cc4', '#edf2ff', '#cfdbff'],
+      '# Co-first author': ['#', 'Co-first author', '共同一作', '#08776d', '#e7f7f2', '#b9e6d8'],
+      '* Corresponding author': ['*', 'Corresponding author', '通讯作者', '#aa4b12', '#fff1e5', '#f4d2b5']
+    };
+    const role = roles[badge];
+    if (role) return {
+      label: role[0], title: lang === 'zh' ? role[2] : role[1], className: 'pub-badge pub-role',
+      style: 'color:' + role[3] + ';background:' + role[4] + ';border-color:' + role[5] + ';'
+    };
+    const palette = ['#686572', '#faf9fb', '#e6e3ea'];
+    return { label: badge, title: badge, className: 'pub-badge',
+      style: 'color:' + palette[0] + ';background:' + palette[1] + ';border-color:' + palette[2] + ';' };
+  }
+
+  renderVals() {
+    const lang = this.state.lang;
+    const t = this.T[lang];
+    const accent = (this.props && this.props.accent) || '#1a3a5c';
+    const accentStrong = this.darken(accent, 0.28);
+    const showDemo = (this.props && this.props.showResearchDemo) !== false;
+    const demoUrl = ((this.props && this.props.demoUrl) || '').trim();
+    const hasDemo = !!demoUrl;
+
+    const q = this.state.query.trim().toLowerCase();
+    const f = this.state.filter;
+    const filtered = this.pubs.filter(p => {
+      if (f !== 'all' && !(p.topics || []).includes(f)) return false;
+      if (q) {
+        const hay = [p.title, p.authors, p.venue, ...(p.aliases || [])].join(' ').toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+    const filteredPubs = filtered.map(p => ({
+      summary: p.summary ? p.summary[lang] : '', hasSummary: !!p.summary,
+      year: p.year, title: p.title, venue: p.venue, badges: (p.badges || []).map(b => this.publicationBadge(b, lang)), links: p.links,
+      authors: this.tokenize(p.authors)
+    }));
+
+    const filterChips = this.filters.map(fl => {
+      const active = this.state.filter === fl.key;
+      const base = "border:1px solid;border-radius:999px;padding:7px 13px;font-size:12.5px;font-weight:500;cursor:pointer;font-family:inherit;transition:all .15s;";
+      const style = active
+        ? base + "background:" + accent + ";border-color:" + accent + ";color:#fff;"
+        : base + "background:#fff;border-color:#dddad5;color:#6b6864;";
+      return { key: fl.key, label: lang === 'zh' ? fl.zh : fl.en, style, onClick: () => this.setFilter(fl.key) };
+    });
+
+    const newsView = this.news.map(n => ({
+      date: n.date, text: lang === 'zh' ? n.zh : n.en,
+      link: n.link && n.link.startsWith('research/') ? n.link + '?lang=' + lang : n.link,
+      hasLink: !!n.link, linkLabel: n.linkLabel ? n.linkLabel[lang] : t.news.link
+    }));
+
+    const total = this.pubs.length;
+    const shown = filtered.length;
+    const countLabel = lang === 'zh'
+      ? (this.state.filter === 'all' && !q ? '共 ' + total + ' 篇' : shown + ' / ' + total + ' 篇')
+      : (this.state.filter === 'all' && !q ? total + ' papers' : shown + ' of ' + total);
+
+    return {
+      t, lang, accent, accentStrong, showDemo,
+      heroName: t.hero.name, heroSuffix: t.hero.suffix,
+      demoUrl, hasDemo, noDemo: !hasDemo,
+      researchHeight: this.state.researchHeight ? this.state.researchHeight + 'px' : '',
+      showcaseUrl: demoUrl + (demoUrl.includes('?') ? '&' : '?') + 'lang=' + lang,
+      langBtn: lang === 'en' ? '\u4e2d\u6587' : 'EN',
+      navBorder: this.state.scrolled ? '#e5e3df' : 'transparent',
+      toggleLang: this.toggleLang,
+      toggleNews: this.toggleNews,
+      interests: lang === 'zh'
+        ? ['\u4e2a\u6027\u5316\u5927\u8bed\u8a00\u6a21\u578b', '\u63a8\u8350\u7cfb\u7edf', '\u7279\u5f81\u4ea4\u4e92', '\u56fe\u795e\u7ecf\u7f51\u7edc', '\u533b\u5de5\u4ea4\u53c9']
+        : ['Personalized LLMs', 'Recommender Systems', 'Feature Interaction', 'Graph Neural Networks', 'AI for Bio & Medicine'],
+      newsView: newsView.slice(0, 3),
+      archivedNews: newsView.slice(3),
+      newsExpanded: this.state.newsExpanded,
+      newsToggleLabel: this.state.newsExpanded ? t.news.less : t.news.more + ' (' + (newsView.length - 3) + ')',
+      filteredPubs, filterChips, countLabel,
+      roleLegendLabel: lang === 'zh' ? '本人身份' : 'My role',
+      roleLegend: ['First author', '# Co-first author', '* Corresponding author'].map(b => this.publicationBadge(b, lang)),
+      noResults: filtered.length === 0,
+      query: this.state.query,
+      onSearch: this.onSearch
+    };
+  }
+}
+</script>
+
+
+</body></html>

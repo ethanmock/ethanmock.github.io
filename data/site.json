@@ -1,0 +1,136 @@
+{
+  "en": {
+    "nav": {
+      "about": "About",
+      "news": "News",
+      "research": "Research",
+      "pubs": "Publications",
+      "recruit": "Join",
+      "teaching": "Teaching"
+    },
+    "hero": {
+      "kicker": "Associate Professor · HUST",
+      "name": "Yixin Su",
+      "suffix": "(Ethan)",
+      "intro": "I study intelligent systems that understand personal preferences and context, and know when to act. My current focus is personalized large language models and proactive assistants, building on recommender systems, feature interaction and graph learning.",
+      "photo": "portrait",
+      "affiliation": "Associate Professor, School of Computer Science and Technology, Huazhong University of Science and Technology.",
+      "background": "Previously at Baidu and PayPal, working on large-scale advertising systems and foundation models. Ph.D. in Computer Science, University of Melbourne.",
+      "researchLink": "Explore my research",
+      "links": []
+    },
+    "news": {
+      "kicker": "Latest",
+      "title": "News",
+      "link": "Read more",
+      "more": "Earlier news",
+      "less": "Show less"
+    },
+    "research": {
+      "kicker": "Selected Work",
+      "title": "Research Highlights",
+      "desc": "From understanding preferences to deciding when to act — and applying AI to biology and medicine.",
+      "slotLabel": "Demo slot",
+      "slotTitle": "Interactive demo goes here",
+      "slotHint": "A reserved mount point. Build a standalone demo page, then set the demoUrl parameter — it embeds here automatically."
+    },
+    "pubs": {
+      "kicker": "Selected & full list",
+      "title": "Publications",
+      "note": "My role: ① first author · # co-first author · * corresponding author",
+      "searchPh": "Search title, author, venue…",
+      "empty": "No publications match your filter."
+    },
+    "recruit": {
+      "kicker": "Prospective students & collaborators",
+      "title": "Interested in joining or collaborating?",
+      "body": "I welcome students from HUST and beyond interested in personalized LLMs, proactive assistants, personalized memory, fine-tuning and recommender systems, as well as AI for biology and medicine.",
+      "cta": "Start a conversation",
+      "pathsTitle": "Ways to work together",
+      "paths": "Research projects, research rotations, competitions and research collaboration.",
+      "emailTitle": "When you write",
+      "email": "Please include a short introduction or CV, your research interests, relevant projects or code, and the kind of collaboration you have in mind. If you are just getting started, tell me what you would like to learn."
+    },
+    "teaching": {
+      "kicker": "Courses",
+      "title": "Teaching",
+      "tbd": "Course information is being organized and will appear here soon."
+    },
+    "students": {
+      "kicker": "Group",
+      "title": "Students",
+      "tbd": "Advised-student information is being organized and will appear here soon."
+    },
+    "footer": {
+      "affil": "School of Computer Science and Technology, HUST",
+      "updated": "Last updated Nov 2026"
+    }
+  },
+  "zh": {
+    "nav": {
+      "about": "简介",
+      "news": "动态",
+      "research": "研究",
+      "pubs": "发表",
+      "recruit": "招生",
+      "teaching": "教学"
+    },
+    "hero": {
+      "kicker": "华中科技大学 · 副教授",
+      "name": "苏奕昕",
+      "suffix": "Yixin Su · Ethan",
+      "intro": "我研究能够理解个人偏好与情境，并适时采取行动的智能系统。当前重点是个性化大语言模型与主动式智能助手，研究基础包括推荐系统、特征交互与图学习。",
+      "photo": "照片占位",
+      "affiliation": "华中科技大学计算机科学与技术学院副教授。",
+      "background": "此前在百度与 PayPal 从事大规模广告系统与基础模型研究；于墨尔本大学获得计算机科学博士学位。",
+      "researchLink": "了解我的研究",
+      "links": []
+    },
+    "news": {
+      "kicker": "近期",
+      "title": "动态",
+      "link": "了解这项工作",
+      "more": "查看早期动态",
+      "less": "收起早期动态"
+    },
+    "research": {
+      "kicker": "代表工作",
+      "title": "研究亮点",
+      "desc": "从理解个人偏好，到决定何时主动行动，同时探索人工智能在生物医学中的应用。",
+      "slotLabel": "演示接口",
+      "slotTitle": "交互式 Demo 待接入",
+      "slotHint": "此处为预留接口。完成独立的 Demo 页面后，将 demoUrl 参数设为其路径即可自动嵌入此处。"
+    },
+    "pubs": {
+      "kicker": "代表作与完整列表",
+      "title": "学术发表",
+      "note": "本人身份：① 第一作者 · # 共同一作 · * 通讯作者",
+      "searchPh": "搜索标题、作者、会议/期刊…",
+      "empty": "没有符合筛选条件的论文。"
+    },
+    "recruit": {
+      "kicker": "招生与合作",
+      "title": "想加入课题组或开展合作？",
+      "body": "欢迎华科内外对个性化大模型、主动式智能助手、个性化记忆、微调与推荐系统感兴趣的同学联系我，也欢迎医工交叉方向的合作。",
+      "cta": "聊聊你的想法",
+      "pathsTitle": "可以怎样参与",
+      "paths": "科研项目、科研轮转、竞赛，以及研究合作。",
+      "emailTitle": "联系时请附上",
+      "email": "简短自我介绍或简历、感兴趣的研究问题、相关项目或代码，以及希望参与的方式。如果刚开始接触科研，也欢迎介绍你想学习什么。"
+    },
+    "teaching": {
+      "kicker": "课程",
+      "title": "教学",
+      "tbd": "课程信息整理中，稍后更新于此。"
+    },
+    "students": {
+      "kicker": "团队",
+      "title": "指导学生",
+      "tbd": "学生信息整理中，稍后更新于此。"
+    },
+    "footer": {
+      "affil": "华中科技大学 计算机科学与技术学院",
+      "updated": "最近更新 2026 年 11 月"
+    }
+  }
+}

@@ -1,5 +1,141 @@
 [
   {
+    "id": "save",
+    "name": "SAVE",
+    "color": "#1a5365",
+    "soft": "#eaf3f5",
+    "number": "01",
+    "venue": "SIGKDD 2027 · Research Track · CCF-A",
+    "role": "first",
+    "featured": true,
+    "area": {
+      "en": "Proactive personalized assistance",
+      "zh": "主动式个性化助手"
+    },
+    "headline": {
+      "en": "Knowing when to help.\nAnd when to stop.",
+      "zh": "知道何时帮忙，\n也知道何时停下。"
+    },
+    "summary": {
+      "en": "A proactive assistant can save work, but a wrong action creates work to undo. SAVE weighs both in saved user effort, then decides how many predicted steps to execute.",
+      "zh": "主动助手可以替用户省事，但错误行动也会增加撤销成本。SAVE 用节省的用户步骤统一衡量两者，再决定主动执行多少步。"
+    },
+    "question": {
+      "en": "What if helping also gets in the way?",
+      "zh": "如果帮忙也会添乱呢？"
+    },
+    "answer": {
+      "en": "Predicting the next action is only part of the problem. An assistant must also decide how far to go: each extra action can save a step or create an interruption that the user has to undo.",
+      "zh": "预测下一步只是问题的一部分。助手还要决定主动走多远：每多执行一步，都可能节省操作，也可能带来需要用户撤销的打扰。"
+    },
+    "takeaway": {
+      "en": "Help is positive saved effort. Interruption is negative saved effort.",
+      "zh": "帮助是正的节省，打扰是负的节省。"
+    },
+    "steps": [
+      {
+        "en": [
+          "Use one currency",
+          "Count the user steps saved by a correct action and the effort spent undoing a wrong one."
+        ],
+        "zh": [
+          "统一衡量尺度",
+          "把正确行动节省的步骤与错误行动带来的撤销成本，放到同一个尺度中。"
+        ]
+      },
+      {
+        "en": [
+          "Learn from ordinary logs",
+          "Learn saved effort from usage logs, without a simulator or an online trial."
+        ],
+        "zh": [
+          "从日常日志学习",
+          "直接从使用日志中学习节省的精力，无需模拟器或在线试验。"
+        ]
+      },
+      {
+        "en": [
+          "Choose how far to act",
+          "Place a decision layer above a step predictor to choose how many steps to execute."
+        ],
+        "zh": [
+          "决定主动走多远",
+          "在步骤预测器上增加决策层，选择应当提前执行的步数。"
+        ]
+      }
+    ],
+    "figures": [],
+    "stats": [
+      {
+        "value": "13.6",
+        "label": {
+          "en": "Up to 13.6 additional saved steps per 100 decision points vs. the strongest compared policy",
+          "zh": "相对最强对比策略，每 100 个决策点最多额外节省 13.6 步"
+        }
+      },
+      {
+        "value": "3",
+        "label": {
+          "en": "Real-world datasets in the reported evaluation",
+          "zh": "论文评估中的真实数据集"
+        }
+      },
+      {
+        "value": "Offline",
+        "label": {
+          "en": "Learning from ordinary usage logs",
+          "zh": "从日常使用日志中学习"
+        }
+      }
+    ],
+    "evidence": {
+      "en": "The paper reports that SAVE outperforms every compared external policy on three real-world datasets, with gains of up to 13.6 saved steps per 100 decision points over the strongest one. Its execution-depth decision is proved optimal under the saved-effort objective. These are the results reported in the abstract; the interactive example above only illustrates the trade-off.",
+      "zh": "论文报告：SAVE 在三个真实数据集上优于所有对比的外部策略，相对其中最强策略，每 100 个决策点最多额外节省 13.6 步。在节省精力这一目标下，论文还证明了执行步数决策的最优性。这里列出摘要报告的结果；上方交互仅用于解释权衡。"
+    },
+    "capabilityTitle": {
+      "en": "Personalization includes the decision to act.",
+      "zh": "个性化，也包括是否行动。"
+    },
+    "capability": {
+      "en": "This work connects personalized prediction to user-centered decisions: understanding what a person may do next is useful only when acting on it actually saves them effort.",
+      "zh": "这项工作将个性化预测与以用户为中心的决策连接起来：理解用户接下来可能做什么，最终需要落到行动是否真正为用户省事。"
+    },
+    "skills": [
+      {
+        "en": "Proactive assistance",
+        "zh": "主动式助手"
+      },
+      {
+        "en": "Sequential decisions",
+        "zh": "序列决策"
+      },
+      {
+        "en": "Offline evaluation",
+        "zh": "离线评估"
+      },
+      {
+        "en": "Personalization",
+        "zh": "个性化"
+      }
+    ],
+    "links": [],
+    "paperTitle": "Interruption Is Negative Help: A Saved-Effort Currency for Proactive Personalized Assistance",
+    "authors": "Yixin Su, Zhiyuan Ma, Bing Tian Dai, Yuhua Li, Yueguo Chen, Rui Zhang*",
+    "source": null,
+    "availability": {
+      "en": "Accepted at SIGKDD 2027, Research Track. Paper link forthcoming. Yixin Su is the sole first author; Rui Zhang is the corresponding author.",
+      "zh": "已被 SIGKDD 2027 Research Track 接收。论文链接后续补充。苏奕昕为独立第一作者，Rui Zhang 为通讯作者。"
+    },
+    "short": {
+      "en": "Weigh help and interruption in saved user effort, then choose how far to act.",
+      "zh": "用节省的用户步骤权衡帮助与打扰，决定主动执行多远。"
+    },
+    "teaser": {
+      "en": "How far should an assistant go?",
+      "zh": "主动助手，应该帮到哪一步？"
+    }
+  },
+  {
     "id": "sign",
     "name": "L₀-SIGN",
     "color": "#6550b5",
@@ -184,7 +320,8 @@
     "teaser": {
       "en": "Which connections matter?",
       "zh": "哪些联系真正有用？"
-    }
+    },
+    "featured": false
   },
   {
     "id": "iedr",
@@ -379,7 +516,8 @@
     "teaser": {
       "en": "Preference, or circumstance?",
       "zh": "是偏好，还是情境？"
-    }
+    },
+    "featured": true
   },
   {
     "id": "unipmt",
@@ -561,6 +699,7 @@
     "teaser": {
       "en": "Will a T cell recognize it?",
       "zh": "T 细胞会识别它吗？"
-    }
+    },
+    "featured": true
   }
 ]

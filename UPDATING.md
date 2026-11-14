@@ -4,6 +4,8 @@
 
 页面 `index.html` 是 Claude Design 导出的**自包含打包产物**（内含模板 + React + 样式）。**所有日常修改都通过 `data/` 下的文件完成，然后跑一次构建脚本，切勿手改 `index.html` 里的内容。**
 
+首页的可读布局与逻辑源文件现为 `templates/home.html`，由构建脚本注入现有运行时；简介、导航、招生、学术入口与页脚的双语文案在 `data/site.json`。运行时仍保留在 `index.html`，不要删除它后再构建。
+
 ---
 
 ## 0. 核心工作流（先记这一条）
@@ -29,8 +31,11 @@
 | `data/news.json` | 新闻 / 动态 | ✅ **在这里改** |
 | `data/publications.json` | 论文列表 | ✅ **在这里改** |
 | `data/config.json` | 站点设置（主题色 / 语言 / demo 等） | ✅ **在这里改** |
+| `data/site.json` | 首页双语文案、学术入口、招生说明、更新时间 | ✅ **在这里改** |
+| `templates/home.html` | 首页布局、交互与样式源文件 | ✅ 布局改动在这里做 |
 | `scripts/build.py` | 构建脚本（注入 data → index.html） | 一般不动 |
 | `assets/fonts/` | 自托管子集化字体（懒加载） | ❌ 自动生成 |
+| `assets/site-fonts.css` | 从首页模板拆出的字体声明，路径相对此文件 | 一般不动 |
 | `demo.html`（可选） | 你自己的交互 demo 页面 | ✅ 需要时自建 |
 
 ---
@@ -131,10 +136,10 @@
 
 ### 5.1 当前内容：三项成果入口与独立介绍页
 
-`demo.html` 展示三张可点击的研究入口，分别进入 `research/sign.html`、`research/iedr.html` 和 `research/unipmt.html`。主页语言切换会同步入口语言；介绍页也可独立切换中英文。
+`demo.html` 展示三张可点击的研究入口，分别进入 `research/save.html`、`research/iedr.html` 和 `research/unipmt.html`。L₀-SIGN 独立页仍保留，通过入口区下方的链接和介绍页的相关工作进入。`data/highlights.json` 的 `featured: false` 表示保留详情页但不展示首页卡片。主页语言切换会同步入口语言；介绍页也可独立切换中英文，并通过 `research/language.js` 共享语言偏好。显式 `?lang=en` / `?lang=zh` 优先于浏览器保存的偏好。
 
 - **改内容**：编辑 `data/highlights.json`，包含双语标题、问题、创新步骤、论文图说明、实验数字、作者身份、研究能力与资源链接。
-- **生成页面**：运行 `python3 scripts/build-highlights.py`，生成 `research/content.js` 和三个 HTML 入口。
+- **生成页面**：运行 `python3 scripts/build-highlights.py`，生成 `research/content.js` 和全部 HTML 入口（目前四个）。SAVE 暂无论文链接，保持 `links: []`、`source: null`；不得用猜测地址或空链接占位。SAVE 的内容与数字依据作者提供的论文摘要，交互数字明确标记为概念示意。
 - **改风格与交互**：`research/style.css` 是介绍页样式，`research/page.js` 负责概念示意、语言切换与图片放大；`demo.html` 和 `research/gallery.js` 负责首页入口。
 - **原论文图**：放在 `assets/highlights/`；来源、提取方式及许可见该目录的 `SOURCES.md`。新增图时保留署名和来源，数字要与论文中的表/图核对。
 
@@ -184,7 +189,11 @@ python3 -m http.server 4599
 
 ## 6. 改其它文字（简介 / 导航 / 招生 / 教学等）
 
-这些双语文案目前**内联在 `index.html` 的模板里**，没有抽成 data 文件。少量改动可以直接在 `index.html` 里搜索英文原文替换（中英两处都要改）。**注意**：`index.html` 是打包产物，除内容外的结构/字体/脚本不要动；改完用 `python3 scripts/build.py --check` 确认没破坏结构（应显示 in sync）。改动较多时建议找维护者从设计源重新生成，更安全。
+编辑 `data/site.json` 中对应的 `en` / `zh` 字段，然后运行 `python3 scripts/build.py`。首屏 `hero.intro` 是研究主张，`hero.affiliation` 是职位单位，`hero.background` 是经历；招生的 `paths` / `email` 分别介绍参与方式与邮件建议。`footer.updated` 为双语更新时间，内容更新时一并维护。
+
+`hero.links` 仅填写已核实的本人学术主页，格式为 `[{"label": "Google Scholar", "url": "https://scholar.google.com/citations?user=已核实的ID"}]`；不要使用示例 ID。邮箱单独保留在首页，不需要重复加入 links。布局、筛选、新闻展开等交互在 `templates/home.html` 修改，再重新构建，不要直接修改打包后的 `index.html`。
+
+新闻默认显示最近三条，其余通过按钮展开；可为某条新闻提供双语 `linkLabel`。代表论文可在 `data/publications.json` 中添加 `summary: {"en": "...", "zh": "..."}`；缩写可加入 `aliases: ["SAVE"]` 以支持搜索。没有链接的论文保持 `links: []`。
 
 > **Teaching / Students 区当前已隐藏**（连同导航里的 Teaching 链接一起移除了，因为暂无内容）。等你有课程/学生信息了告诉我，我从 git 历史恢复并做成和 Publications 一样的数据驱动形式（改 JSON 即可更新）。
 
@@ -198,7 +207,7 @@ python3 -m http.server 4599
 
 ## 8. 字体说明（为什么这么快）
 
-原始导出是单个 8.8MB 文件（整套中文衬线字体以 base64 内嵌）。现已子集化拆成按 `unicode-range` 懒加载的 `assets/fonts/*.woff2`：`index.html` 约 340KB，英文首屏只额外加载 ~180KB 字体，切中文再按需取所需字块。
+原始导出是单个 8.8MB 文件（整套中文衬线字体以 base64 内嵌）。现已子集化拆成按 `unicode-range` 懒加载的 `assets/fonts/*.woff2`：字体声明现已拆入可缓存的 `assets/site-fonts.css`，`index.html` 约 137KB，字体仍按字块加载。
 
 `assets/fonts/` 由字体子集脚本一次性生成，**日常更新内容无需重建字体**。若将来新增了当前子集未覆盖的生僻字（会回退成系统字体），联系维护者重跑子集脚本扩充即可。
 

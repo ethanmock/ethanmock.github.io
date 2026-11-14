@@ -2,7 +2,7 @@
   'use strict';
   const works = window.RESEARCH_WORKS;
   const work = works.find(w => w.id === document.body.dataset.work);
-  let lang = new URLSearchParams(location.search).get('lang') === 'zh' ? 'zh' : 'en';
+  let lang = window.SiteLanguage.get();
   let phase = 0, weather = 0, social = 0;
   const e = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const t = obj => obj[lang];
@@ -18,23 +18,23 @@
     return `<div class="chart"><h3>${e(t(b.title))}</h3>${b.rows.map(([name,value])=>`<div class="bar-row"><span>${e(name)}</span><div class="bar-track"><div class="bar-fill" style="width:${100*(value-b.min)/(b.max-b.min)}%"></div></div><b>${value.toFixed(value<1?4:2)}</b></div>`).join('')}<div class="chart-note">${say('Bar axis starts at ','柱形坐标起点为 ')+b.min+say('; exact values shown at right.','；右侧显示准确数值。')} <a href="${e(work.source)}" target="_blank" rel="noopener">${say('Paper ↗','论文 ↗')}</a></div></div>`;
   }
   function render() {
-    document.documentElement.lang=lang==='zh'?'zh-CN':'en';
+    window.SiteLanguage.set(lang);
     document.documentElement.style.setProperty('--accent',work.color);
     document.documentElement.style.setProperty('--soft',work.soft);
     document.title=`${work.name} — ${t(work.area)} | Yixin Su`;
     document.getElementById('app').innerHTML=`<div class="shell">
-      <nav class="nav" aria-label="${say('Main navigation','主导航')}"><a class="brand" href="../">Yixin Su</a><div class="nav-right"><a href="../#research">${say('← All research','← 全部研究')}</a><button class="lang" id="lang">${say('中文','EN')}</button></div></nav>
-      <header class="hero"><div class="hero-copy"><div class="eyebrow">${e(work.name)} / ${e(t(work.area))}</div><h1>${e(t(work.headline))}</h1><p class="lede">${e(t(work.summary))}</p><div class="meta"><span class="pill">${e(work.venue)}</span><span class="pill role">${work.role==='first'?say('① First author','① 第一作者'):say('# Co-first author','# 共同一作')}</span></div><div class="buttons"><a class="button primary" href="#idea">${say('Discover the idea','了解核心想法')}<span aria-hidden="true">↓</span></a>${link(work.links[0])}</div></div>
+      <nav class="nav" aria-label="${say('Main navigation','主导航')}"><a class="brand" href="../?lang=${lang}">Yixin Su</a><div class="nav-right"><a href="../?lang=${lang}#research">${say('← All research','← 全部研究')}</a><button class="lang" id="lang">${say('中文','EN')}</button></div></nav>
+      <header class="hero"><div class="hero-copy"><div class="eyebrow">${e(work.name)} / ${e(t(work.area))}</div><h1>${e(t(work.headline))}</h1><p class="lede">${e(t(work.summary))}</p><div class="meta"><span class="pill">${e(work.venue)}</span><span class="pill role">${work.role==='first'?say('① First author','① 第一作者'):say('# Co-first author','# 共同一作')}</span></div><div class="buttons"><a class="button primary" href="#idea">${say('Discover the idea','了解核心想法')}<span aria-hidden="true">↓</span></a>${work.links.length?link(work.links[0]):''}</div></div>
       <div class="experiment"><div class="experiment-top"><b>${say('THE IDEA, IN MOTION','动手理解核心想法')}</b><span>${say('Concept illustration','概念示意')}</span></div><div class="scene" id="scene"></div><div id="controls" class="controls"></div><p class="scene-caption" id="scene-caption" aria-live="polite"></p></div></header>
       <section class="section" id="idea">${heading('01',t(work.question),t(work.answer))}<div class="takeaway">${e(t(work.takeaway))}</div><div class="steps">${work.steps.map((s,i)=>`<article class="step"><div class="step-num">0${i+1}</div><h3>${e(t(s)[0])}</h3><p>${e(t(s)[1])}</p></article>`).join('')}</div></section>
-      <section class="section" id="architecture">${heading('02',say('Inside the paper','走进论文'),say('The original figures, with a reading guide.','用原始论文图，理解方法的关键环节。'))}${work.figures.slice(0,work.id==='unipmt'?1:2).map(figure).join('')}</section>
-      <section class="section" id="evidence">${heading('03',say('What the evidence shows','实验证据告诉我们什么'))}<div class="stats">${work.stats.map(s=>`<div class="stat"><strong>${e(s.value)}</strong><span>${e(t(s.label))}</span></div>`).join('')}</div><p>${e(t(work.evidence))}</p>${chart()}${work.id==='unipmt'?figure(work.figures[1],1):''}</section>
-      <section class="section" id="research-focus">${heading('04',t(work.capabilityTitle),t(work.capability))}<div class="skills">${work.skills.map(s=>`<span>${e(t(s))}</span>`).join('')}</div></section>
-      <section class="section" id="resources">${heading('05',say('Explore the work','深入了解这项工作'))}<div class="paper-title">${e(work.paperTitle)}</div><div class="authors">${e(work.authors)}</div><div class="buttons">${work.links.map(link).join('')}</div></section>
+      ${work.figures.length?`<section class="section" id="architecture">${heading('02',say('Inside the paper','走进论文'),say('The original figures, with a reading guide.','用原始论文图，理解方法的关键环节。'))}${work.figures.slice(0,work.id==='unipmt'?1:2).map(figure).join('')}</section>`:''}
+      <section class="section" id="evidence">${heading(work.figures.length?'03':'02',say('What the evidence shows','实验证据告诉我们什么'))}<div class="stats">${work.stats.map(s=>`<div class="stat"><strong>${e(s.value)}</strong><span>${e(t(s.label))}</span></div>`).join('')}</div><p>${e(t(work.evidence))}</p>${chart()}${work.id==='unipmt'?figure(work.figures[1],1):''}</section>
+      <section class="section" id="research-focus">${heading(work.figures.length?'04':'03',t(work.capabilityTitle),t(work.capability))}<div class="skills">${work.skills.map(s=>`<span>${e(t(s))}</span>`).join('')}</div></section>
+      <section class="section" id="resources">${heading(work.figures.length?'05':'04',say('Explore the work','深入了解这项工作'))}<div class="paper-title">${e(work.paperTitle)}</div><div class="authors">${e(work.authors)}</div><div class="buttons">${work.links.map(link).join('')}</div>${work.availability?`<p class="availability">${e(t(work.availability))}</p>`:''}</section>
       <section class="section">${heading('↗',say('Continue exploring','继续探索'))}<div class="other-works">${works.filter(w=>w.id!==work.id).map(w=>`<a class="other-work" href="${w.id}.html?lang=${lang}"><div><strong>${e(w.name)}</strong><small>${e(t(w.teaser))}</small></div><span aria-hidden="true">↗</span></a>`).join('')}</div></section>
       <footer class="footer"><span>Yixin Su · ${say('School of Computer Science and Technology, HUST','华中科技大学计算机科学与技术学院')}</span><a href="mailto:suyixin@hust.edu.cn">${say('Research & collaboration','研究与合作')} ↗</a></footer></div>
       <dialog id="figure-dialog"><button class="close" id="close-dialog" aria-label="${say('Close figure','关闭图片')}">${say('Close','关闭')} ×</button><img id="dialog-image" alt=""></dialog>`;
-    document.getElementById('lang').onclick=()=>{lang=lang==='en'?'zh':'en';history.replaceState(null,'',`${location.pathname}?lang=${lang}${location.hash}`);render();};
+    document.getElementById('lang').onclick=()=>{lang=lang==='en'?'zh':'en';render();};
     document.querySelectorAll('[data-figure]').forEach(button=>button.onclick=()=>{
       const f=work.figures[Number(button.dataset.figure)],image=document.getElementById('dialog-image');image.src='../assets/highlights/'+f.src;image.alt=t(f.caption);document.getElementById('figure-dialog').showModal();
     });
@@ -54,7 +54,14 @@
   }
   function renderScene() {
     const scene=document.getElementById('scene'),controls=document.getElementById('controls'),caption=document.getElementById('scene-caption');
-    if(work.id==='sign') {
+    if(work.id==='save') {
+      const helped = phase === 0 ? 3 : 1;
+      const undone = phase === 0 ? 1 : 3;
+      const net = helped - undone;
+      scene.innerHTML=`<div class="save-ledger"><div class="ledger-row"><span>${say('Steps saved','节省步骤')}</span><strong>+${helped}</strong></div><div class="ledger-row undo"><span>${say('Steps spent undoing','撤销成本')}</span><strong>−${undone}</strong></div><div class="ledger-total"><span>${say('Net saved effort','净节省')}</span><strong>${net>0?'+':''}${net}</strong></div><small>${say('Illustrative numbers · not experimental results','示意数字 · 非实验结果')}</small></div>`;
+      controls.innerHTML=control(say('More help','帮助较多'),0,phase===0)+control(say('More interruption','打扰较多'),1,phase===1);
+      caption.textContent=say('Both outcomes use the same currency: user steps. SAVE learns this trade-off from logs to choose execution depth; this illustration is not a running model.','两种结果都用用户步骤衡量。SAVE 从日志中学习这种权衡，决定执行深度；这里仅为概念示意，并未运行模型。');
+    } else if(work.id==='sign') {
       scene.innerHTML=signScene();controls.innerHTML=control(say('All candidate links','全部候选连接'),0,phase===0)+control(say('Learn sparse links','学习稀疏连接'),1,phase===1);
       caption.textContent=phase?say('Keep useful interactions, suppress noise. This simplified graph illustrates the idea; these edges are not model predictions.','保留有用交互，抑制噪声。此图仅解释想法，示意边并非模型预测结果。'):say('Many candidate interactions compete for the model’s attention. Click to see the selection idea.','大量候选交互同时进入模型。点击按钮，看看自动筛选的核心想法。');
     } else if(work.id==='unipmt') {

@@ -8,10 +8,11 @@ works=json.loads((ROOT/'data/highlights.json').read_text())
 for work in works:
  title=html.escape(work['name']+' — '+work['area']['en']+' | Yixin Su')
  description=html.escape(work['summary']['en'],quote=True)
+ resource=f'<a href="{html.escape(work["source"],quote=True)}">Read the paper</a>' if work.get('source') else '<p>'+html.escape(work.get('availability',{}).get('en','Paper link forthcoming.'))+'</p>'
  page=f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title><meta name="description" content="{description}"><meta name="theme-color" content="{work['color']}">
-<link rel="stylesheet" href="style.css"><script src="content.js" defer></script><script src="page.js" defer></script></head>
-<body data-work="{work['id']}"><main id="app"></main><noscript><h1>{title}</h1><p>{description}</p><a href="{work['source']}">Read the paper</a></noscript></body></html>\n'''
+<link rel="stylesheet" href="style.css"><script src="language.js" defer></script><script src="content.js" defer></script><script src="page.js" defer></script></head>
+<body data-work="{work['id']}"><main id="app"></main><noscript><h1>{title}</h1><p>{description}</p>{resource}</noscript></body></html>\n'''
  (ROOT/'research'/f"{work['id']}.html").write_text(page)
-print('[highlights] built 3 research pages and shared content')
+print(f'[highlights] built {len(works)} research pages and shared content')

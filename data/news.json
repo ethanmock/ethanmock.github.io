@@ -1,13 +1,18 @@
 [
   {
     "date": "2026.11",
-    "en": "One paper accepted by SIGKDD 2027 (CCF-A).",
-    "zh": "一篇论文被 SIGKDD 2027 接收（CCF-A）。"
+    "en": "SAVE accepted by SIGKDD 2027: balancing help and interruption in proactive personalized assistance.",
+    "zh": "SAVE 获 SIGKDD 2027 接收：研究主动式个性化助手如何权衡帮助与打扰。",
+    "link": "research/save.html",
+    "linkLabel": {
+      "en": "Explore SAVE",
+      "zh": "了解 SAVE"
+    }
   },
   {
     "date": "2026.08",
-    "en": "One paper accepted by EMNLP 2026 (main conference).",
-    "zh": "一篇论文被 EMNLP 2026 主会接收。"
+    "en": "VCoT-SQL accepted by EMNLP 2026 (main conference): dual chain-of-thought validation for Text-to-SQL.",
+    "zh": "VCoT-SQL 获 EMNLP 2026 主会接收：通过双链式思维验证提升 Text-to-SQL。"
   },
   {
     "date": "2026.05",
